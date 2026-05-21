@@ -33,7 +33,7 @@
         pgwSlider.currentNb = 0;
         pgwSlider.nbElements = 0;
         pgwSlider.eventInterval = null;
-        pgwSlider.window = $(window);
+        pgwSlider.window = $(globalThis);
 
         // Init
         var init = function() {
@@ -58,22 +58,22 @@
 
             // Get link
             var elementLink = obj.find('a').attr('href');
-            if ((typeof elementLink != 'undefined') && (elementLink != '')) {
+            if ((elementLink !== undefined) && (elementLink != '')) {
                 element.link = elementLink;
                 var elementLinkTarget = obj.find('a').attr('target');
-                if ((typeof elementLinkTarget != 'undefined') && (elementLinkTarget != '')) {
+                if ((elementLinkTarget !== undefined) && (elementLinkTarget != '')) {
                     element.linkTarget = elementLinkTarget;
                 }
             }
 
             // Get image 
             var elementThumbnail = obj.find('img').attr('src');
-            if ((typeof elementThumbnail != 'undefined') && (elementThumbnail != '')) {
+            if ((elementThumbnail !== undefined) && (elementThumbnail != '')) {
                 element.thumbnail = elementThumbnail;
             }
 
             var elementImage = obj.find('img').attr('data-large-src');
-            if ((typeof elementImage != 'undefined') && (elementImage != '')) {
+            if ((elementImage !== undefined) && (elementImage != '')) {
                 element.image = elementImage;
             }
 
